@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+    elementFormDefault="qualified"
+    targetNamespace="http://www.cyrhla.com/2017/schema/container"
+    xmlns:con="http://www.cyrhla.com/2017/schema/container"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:annotation>
+        <xs:documentation xml:lang="en"><![CDATA[
+            XML Schema for http://www.cyrhla.com/2017/schema/container namespace
+
+            Created 2017-03-11
+
+            Created by
+            Krystian Pietruszka (kpietru@cyrhla.com)
+
+            Generator with option "Salami Slice"
+            http://www.freeformatter.com/xsd-generator.html
+            Result modified!
+        ]]></xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="con:imports" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="con:parameters" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="con:services" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="imports">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="con:import" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="import">
+        <xs:complexType>
+            <xs:attribute type="xs:string" name="resource" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="parameters">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="con:parameter" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="parameter">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute type="xs:string" name="id" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="services">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="con:service" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="service">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="con:arguments" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="con:argument" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="con:calls" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="con:call" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="con:tags" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="con:tag" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="id" use="required"/>
+            <xs:attribute type="xs:string" name="alias" use="optional"/>
+            <xs:attribute type="xs:string" name="class" use="required"/>
+            <xs:attribute type="xs:boolean" name="public" use="optional"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calls">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="con:call" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="call">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="con:arguments" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="con:argument" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="method" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="arguments">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="con:argument" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="argument" type="xs:string"/>
+
+    <xs:element name="tags">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="con:tag" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="tag" type="xs:string"/>
+
+</xs:schema>
+

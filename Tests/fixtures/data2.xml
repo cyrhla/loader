@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+    <imports>
+        <import resource="data3.json"/>
+    </imports>
+
+    <fooXml id="_123" class="abc" data-number="-.1" data-boolean="true" data-null="null">
+        <arguments>
+            <argument>0</argument>
+            <argument>3.14</argument>
+            <argument>.0</argument>
+            <argument>null</argument>
+            <argument>true</argument>
+            <argument>false</argument>
+            <argument>"Żółć"
+ abc</argument>
+        </arguments>
+        <arguments>
+            <argument></argument>
+            <argument> </argument>
+        </arguments>
+    </fooXml>
+</root>
+

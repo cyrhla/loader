@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container
+    xmlns="http://www.cyrhla.com/2017/schema/container"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.cyrhla.com/2017/schema/container http://www.cyrhla.com/2017/schema/container-1.0.xsd">
+
+    <imports>
+        <import resource="translator.xml"/>
+    </imports>
+
+    <parameters>
+        <parameter id="foo"></parameter>
+        <parameter id="bar">-.10</parameter>
+        <parameter id="baz"> 0 </parameter>
+        <parameter id="null">false </parameter>
+        <parameter id=" {}"> []</parameter>
+        <parameter id="{}">[]</parameter>
+        <parameter id="[0,false]">{
+            "foo": null,
+            "bar": "baz"
+        }</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="bar" alias="żółć" class=" " public="true">
+            <arguments>
+                <argument>arg1</argument>
+                <argument>arg2</argument>
+            </arguments>
+            <argument>arg3</argument>
+            <call method="someMethod">
+                <arguments>
+                    <argument>a1</argument>
+                    <argument>a2</argument>
+                </arguments>
+                <argument>a3</argument>
+            </call>
+            <tags>
+                <tag>tag1</tag>
+                <tag>tag2</tag>
+            </tags>
+            <tag>tag3</tag>
+        </service>
+
+        <service id="baz" class="@some/module/Class" public="false">
+            <arguments>
+                <argument></argument>
+                <argument> </argument>
+            </arguments>
+            <argument> żółć </argument>
+            <calls>
+                <call method="someMethod">
+                    <arguments>
+                        <argument> 9
+</argument>
+                        <argument>999999999999999</argument>
+                        <argument>9999999999999999</argument>
+                        <argument>9.999999999999999</argument>
+                        <argument>999999999999999999999</argument>
+                    </arguments>
+                    <argument>undefined</argument>
+                </call>
+            </calls>
+            <tags>
+                <tag>tag1</tag>
+                <tag>tag2</tag>
+            </tags>
+            <tag>tag3
+</tag>
+        </service>
+
+    </services>
+
+</container>
+

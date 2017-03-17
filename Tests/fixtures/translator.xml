@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translator
+    xmlns="http://www.cyrhla.com/2017/schema/translator"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.cyrhla.com/2017/schema/translator http://www.cyrhla.com/2017/schema/translator-1.0.xsd">
+
+    <imports>
+        <import resource="data3.json"/>
+        <import resource="data3.json"/>
+    </imports>
+
+    <translations>
+
+        <translation id="blog.HELLO">
+            <text lang="en">Hello</text>
+            <text lang="de">Halo</text>
+            <text lang="fr">Bnjour</text>
+            <text lang="pl">Cześć</text>
+        </translation>
+
+        <translation id="blog.GREEN">
+            <text lang="en">green</text>
+            <text lang="de">grün</text>
+            <text lang="fr">vert</text>
+            <text lang="pl">zielony</text>
+        </translation>
+
+    </translations>
+
+</translator>
+

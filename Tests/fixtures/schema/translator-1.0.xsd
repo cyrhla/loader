@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema
+    elementFormDefault="qualified"
+    targetNamespace="http://www.cyrhla.com/2017/schema/translator"
+    xmlns:tran="http://www.cyrhla.com/2017/schema/translator"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:annotation>
+        <xs:documentation xml:lang="en"><![CDATA[
+            XML Schema for http://www.cyrhla.com/2017/schema/translator namespace
+
+            Created 2017-03-11
+
+            Created by
+            Krystian Pietruszka (kpietru@cyrhla.com)
+
+            Generator with option "Salami Slice"
+            http://www.freeformatter.com/xsd-generator.html
+            Result modified!
+        ]]></xs:documentation>
+    </xs:annotation>
+
+    <xs:element name="translator">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tran:imports" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="tran:translations" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="imports">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tran:import" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="import">
+        <xs:complexType>
+            <xs:attribute type="xs:string" name="resource" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="translations">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tran:translation" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="translation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tran:text" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="text">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute type="xs:string" name="lang" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
+

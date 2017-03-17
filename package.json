@@ -1,0 +1,32 @@
+{
+    "name": "@cyrhla/loader",
+    "version": "0.0.1",
+    "description": "Loads, parses and outputs the data (YAML, JSON, XML) as object.",
+    "keywords": ["load", "parse", "yaml", "xml", "json"],
+    "homepage": "http://www.cyrhla.com",
+    "license": "MIT",
+    "author": {
+        "name": "Krystian Pietruszka",
+        "email": "kpietru@cyrhla.com"
+    },
+    "contributors": [
+        "Community (http://github.com/cyrhla/loader/graphs/contributors)"
+    ],
+    "bugs": {
+        "url": "http://github.com/cyrhla/loader/issues"
+    },
+    "engines": {
+        "node": ">= 7.2.1",
+        "npm": ">= 3.10.10"
+    },
+    "scripts": {
+        "test": "node scripts/test.js"
+    },
+    "dependencies": {
+        "@cyrhla/tester": "cyrhla/tester",
+        "xml2js":         "^0.4.17",
+        "yamljs":         "^0.2.8",
+        "locutus":        "^2.0.8"
+    }
+}
+
