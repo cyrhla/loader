@@ -57,9 +57,12 @@ module.exports = class ContainerNormalizer
         // translations, routing (?)
 
         if ('parameters' in obj) {
-            for (let key in obj['parameters']) {
-                var value = obj['parameters'][key]
-                temp['parameters.' + key] = value
+            for (let prefix in obj['parameters']) {
+                var prefixValue = obj['parameters'][prefix]
+                for (let key in prefixValue) {
+                    var value = prefixValue[key]
+                    temp['parameters.' + prefix + '.' + key] = value
+                }
             }
 
             delete obj['parameters']
@@ -80,9 +83,12 @@ module.exports = class ContainerNormalizer
         }
 
         if ('services' in obj) {
-            for (let key in obj['services']) {
-                var value = obj['services'][key]
-                temp['services.' + key] = value
+            for (let prefix in obj['services']) {
+                var prefixValue = obj['services'][prefix]
+                for (let key in prefixValue) {
+                    var value = prefixValue[key]
+                    temp['services.' + prefix + '.' + key] = value
+                }
             }
 
             delete obj['services']
@@ -108,4 +114,5 @@ module.exports = class ContainerNormalizer
             .all()
     }
 }
+
 
